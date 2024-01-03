@@ -15,7 +15,7 @@ Without loss of generality, we define open loop system dynamics in the form of
 $$
 \dot{x}_p=A_px_p+B_p\Lambda u +B_p\delta_p(x_p)
 $$
-where $A_p,B_p$ are known system matrix, $x_p$ is system states, $u$ is control.
+where $A_p,B_p$ are known system matrix, $x_p$ is system states,$u$ is control.
 
 Dimensionality:
 $$
@@ -53,7 +53,7 @@ W_p &\in \Re^{n_s \times m}\\
 \sigma_p &\in \Re^{n_s \times 1}
 \end{aligned}
 $$
-where $W_p$ is unknown weights, $\sigma_p$ is known basis function which is defined as
+where $W_p$ is unknown weights,$\sigma_p$ is known basis function which is defined as
 $$
 \begin{aligned}
 &\sigma_p(x_p)=[\sigma_{p_1}(x_p) \ \cdots \ \sigma_{p_s}(x_p)] \\
@@ -77,7 +77,7 @@ Now, let's design nominal control for ideal system.
 $$
 u = u_n + u_a = u_n = -K_xx_p+K_rr
 $$
-where $K_x$ is feedback gain, $ x_p$ is feedback state, $ K_r$ is feedforward gain, $ r$ is feedforward command.
+where $K_x$ is feedback gain,$ x_p$ is feedback state,$ K_r$ is feedforward gain,$ r$ is feedforward command.
 
 Dimensionality
 $$
@@ -237,7 +237,7 @@ $$
 &=-[e^TQ(A_re-B_p\Lambda\widetilde{W}^T\sigma(e+x_r,u_n))+(A_re-B_p\Lambda\widetilde{W}^T\sigma(e+x_r,u_n))^TQe]
 \end{aligned}
 $$
-Since $e,x_r,u_n$ are bounded, $A_r$ is Hurwitz, $\widetilde{W} = \hat{W} - W = \hat{W} - Constant$ is bounded.
+Since $e,x_r,u_n$ are bounded,$A_r$ is Hurwitz,$\widetilde{W} = \hat{W} - W = \hat{W} - Constant$ is bounded.
 According to Barbalet Lemma, we can conclude that
 $$
 \begin{aligned}
@@ -255,7 +255,8 @@ here). To conclude, it is not ideal for parameter estimation(system identificati
 
 ## Summarize
 
-$$ \begin{aligned}
+$$
+\begin{aligned}
 \text{System Dynamics}& \\
 &\dot{x}_p=A_px_p+B_p\Lambda u +B_p\delta_p(x_p)\\
 \text{Total Control Law}& \\
@@ -270,7 +271,8 @@ $$ \begin{aligned}
 &\sigma(x_p,u_n)\triangleq[\sigma_p(x_p)\quad u_n]^T\\
 &\dot{x}_r=A_rx_r+B_rr\\
 &A_r^TP+PA_r=-Q\\
-\end{aligned} $$
+\end{aligned}
+$$
 
 ## Improve Transient Dynamics
 
@@ -442,10 +444,10 @@ Now,we need to design control law $u$ to make real system behave just like refer
 $$
 u=W_x^Tx_p+W_r^Tr
 $$
-Assume there exist ideal gain $W_x^{\*}$ and $W_r^{\*}$ such we can perfectly tracking the reference model,thus
+Assume there exist ideal gain $W_x^*$ and $W_r^*$ such we can perfectly tracking the reference model,thus
 $$
 \begin{aligned}
-&A_rx_r+B_rr = A_px_p+B_pu^{\*} ,(x_p = x_r)\\
+&A_rx_r+B_rr = A_px_p+B_pu^* ,(x_p = x_r)\\
 &(A_r-A_p)x_r+B_rr-B_p(W_x^{*^T}x_r+W_r^{*^T}r)=0\\
 &[(A_r-A_p)-B_pW_x^{*^T}]x_r+(B_r-B_pW_r^{*^T})r=0\\
 \\
@@ -457,7 +459,7 @@ $$
 \end{aligned}
 $$
 From above,we know that if we have some pre-known knowledge about plant dynamics,we can estimate the ideal
-gain $W_x^{\*}$ and $W_r^{\*}$ and set it as initial condition. Initial condition is very important influence factors on performance of the MRAC,let's take a look
+gain $W_x^*$ and $W_r^*$ and set it as initial condition. Initial condition is very important influence factors on performance of the MRAC,let's take a look
 
 ![](MRACPresentation.assets/init_val_compare.png)
 
@@ -469,8 +471,8 @@ $$
 define
 $$
 \begin{aligned}
-\widetilde{W}_x &= \hat{W}_x - W_x^{\*} \\
-\widetilde{W}_r &= \hat{W}_r - W_r^{\*}
+\widetilde{W}_x &= \hat{W}_x - W_x^*\\
+\widetilde{W}_r &= \hat{W}_r - W_r^*
 \end{aligned}
 $$
 Plug into plant model,we have
@@ -478,7 +480,7 @@ $$
 \begin{aligned}
 \dot{x}_p&=A_px_p+B_p(\hat{W}_x^Tx_p+\hat{W}_r^Tx_r)\\
 &=A_px_p+B_p(\hat{W}_x^Tx_p+\hat{W}_r^Tx_r+\color{red}{W_x^{*^T}x_p-W_x^{*^T}x_p+W_r^{*^T}r-W_r^{*^T}r})\\
-&=A_px_p+B_pW_x^{*^T}x_p+B_pW_r^{*^T}r+B_p[(\hat{W}_x - W_x^{\*})^Tx_p+(\hat{W}_r - W_r^{\*})^Tr]\\
+&=A_px_p+B_pW_x^{*^T}x_p+B_pW_r^{*^T}r+B_p[(\hat{W}_x - W_x^*)^Tx_p+(\hat{W}_r - W_r^*)^Tr]\\
 &=\color{green}{A_rx_p+B_rr}+\color{red}{B_p(\widetilde{W_x}^Tx_p+\widetilde{W}_r^Tr)}
 \end{aligned}
 $$
@@ -504,7 +506,7 @@ Stability Theorem,choose Lyapunov function as
 $$
 V=e^TPe+\gamma_x^{-1}\widetilde{W_x}^T\widetilde{W_x}+\gamma_r^{-1}\widetilde{W_r}^T\widetilde{W_r}
 $$
-where $\gamma_x$ is learning rate for state feedback, $\gamma_r$ is learning rate for input feedforward,,and $P$ is a positive definite matrix
+where $\gamma_x$ is learning rate for state feedback,$\gamma_r$ is learning rate for input feedforward,,and $P$ is a positive definite matrix
 $(P\succ0)$ which satisfy following continuous Lyapunov Equation:
 $$
 A_r^TP+PA_r=-Q
@@ -608,7 +610,7 @@ $$
 &\Omega_0:\{\Vert e\Vert_{l_2} \le \frac{2\lambda_{max}(P)\xi_{max}}{\lambda_{min}(Q)}:= e_0 \}
 \end{aligned}
 $$
-If state tracking error enters compact set $\Omega_1$ in finite time,it will remain inside for all future time. Note that $\Omega_0$ is compact in e space,however not compact in $\Delta\theta$ space. Therefore $\Delta\theta$ is not restricted at all. Inside $\Omega_0$, $\dot{V}$ can be positive,as a consequence, $\Delta\theta$ can grow unbounded even though e is bounded. This is known as "Parameter Drifting".This shows that MRAC law $\dot{\theta}=-\Gamma_\theta\phi e^TPB_p$ is not robust to bounded disturbances,no matter how small the latter are.
+If state tracking error enters compact set $\Omega_1$ in finite time,it will remain inside for all future time. Note that $\Omega_0$ is compact in e space,however not compact in $\Delta\theta$ space. Therefore $\Delta\theta$ is not restricted at all. Inside $\Omega_0$,$\dot{V}$ can be positive,as a consequence,$\Delta\theta$ can grow unbounded even though e is bounded. This is known as "Parameter Drifting".This shows that MRAC law $\dot{\theta}=-\Gamma_\theta\phi e^TPB_p$ is not robust to bounded disturbances,no matter how small the latter are.
 
 ![](MRACPresentation.assets/projection.png)
 
@@ -686,11 +688,11 @@ What does projection operator do?
 ![](MRACPresentation.assets/projection_math.png)
 
 
-Here,we assume that the ground turth $\theta^{\*}$ lives in a compact set ,so make sure $\theta^{\*}$ is inside of preselected convex set $\Omega_1$
+Here,we assume that the ground turth $\theta^*$ lives in a compact set ,so make sure $\theta^*$ is inside of preselected convex set $\Omega_1$
 
 Convex Property of Projection Operator
 $$
-(\theta-\theta^{\*})^T(\Gamma^{-1}proj(\theta,\Gamma y)-y)\le 0
+(\theta-\theta^*)^T(\Gamma^{-1}proj(\theta,\Gamma y)-y)\le 0
 $$
 thus
 $$
@@ -699,8 +701,8 @@ $$
 &
 \begin{aligned}
 tr(\Delta\theta^T(\Gamma_\theta^{-1}\dot{\hat\theta}-\phi e^TpB_p))
-&=tr((\theta - \theta^{\*})(\Gamma_\theta^{-1}proj(\hat\theta,\Gamma_\theta\phi e^TPB_p)-\phi e^TPB_p)) \\
-&= \sum_{j=1}^m(\hat\theta-\theta^{\*})_j^T(\Gamma^{-1}proj(\hat\theta,\Gamma Y_j)-Y_j)\le 0
+&=tr((\theta - \theta^*)(\Gamma_\theta^{-1}proj(\hat\theta,\Gamma_\theta\phi e^TPB_p)-\phi e^TPB_p)) \\
+&= \sum_{j=1}^m(\hat\theta-\theta^*)_j^T(\Gamma^{-1}proj(\hat\theta,\Gamma Y_j)-Y_j)\le 0
 \end{aligned}
 \end{aligned}
 $$
@@ -739,4 +741,5 @@ $$
 ![](MRACPresentation.assets/rd2.png)
 
 ![](MRACPresentation.assets/rd3.png)
+
 
