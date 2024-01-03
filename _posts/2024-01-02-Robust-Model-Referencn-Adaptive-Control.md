@@ -688,7 +688,7 @@ What does projection operator do?
 ![](MRACPresentation.assets/projection_math.png)
 
 
-Here,we assume that the ground turth $\theta^*$ lives in a compact set ,so make sure $\theta^*$ is inside of preselected convex set $\Omega_1$
+Here,we assume that the ground turth $\theta^\*$ lives in a compact set ,so make sure $\theta^\*$ is inside of preselected convex set $\Omega_1$
 
 Convex Property of Projection Operator
 $$
