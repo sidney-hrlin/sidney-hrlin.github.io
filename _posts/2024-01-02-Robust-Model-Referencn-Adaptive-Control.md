@@ -692,7 +692,7 @@ Here,we assume that the ground turth $\theta^\*$ lives in a compact set ,so make
 
 Convex Property of Projection Operator
 $$
-(\theta-\theta^\*)^T(\Gamma^{-1}proj(\theta,\Gamma y)-y)\le 0
+(\theta-\theta^{\*})^T(\Gamma^{-1}proj(\theta,\Gamma y)-y)\le 0
 $$
 thus
 $$
@@ -701,8 +701,8 @@ $$
 &
 \begin{aligned}
 tr(\Delta\theta^T(\Gamma_\theta^{-1}\dot{\hat\theta}-\phi e^TpB_p))
-&=tr((\theta - \theta^\*)(\Gamma_\theta^{-1}proj(\hat\theta,\Gamma_\theta\phi e^TPB_p)-\phi e^TPB_p)) \\
-&= \sum_{j=1}^m(\hat\theta-\theta^\*)_j^T(\Gamma^{-1}proj(\hat\theta,\Gamma Y_j)-Y_j)\le 0
+&=tr((\theta - \theta^{\*})(\Gamma_\theta^{-1}proj(\hat\theta,\Gamma_\theta\phi e^TPB_p)-\phi e^TPB_p)) \\
+&= \sum_{j=1}^m(\hat\theta-\theta^{\*})_j^T(\Gamma^{-1}proj(\hat\theta,\Gamma Y_j)-Y_j)\le 0
 \end{aligned}
 \end{aligned}
 $$
