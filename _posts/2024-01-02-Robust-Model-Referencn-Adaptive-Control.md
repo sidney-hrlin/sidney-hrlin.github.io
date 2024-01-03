@@ -444,7 +444,7 @@ Now,we need to design control law $u$ to make real system behave just like refer
 $$
 u=W_x^Tx_p+W_r^Tr
 $$
-Assume there exist ideal gain $W_x^*$ and $W_r^*$ such we can perfectly tracking the reference model,thus
+Assume there exist ideal gain $W_x^\*$ and $W_r^\*$ such we can perfectly tracking the reference model,thus
 $$
 \begin{aligned}
 &A_rx_r+B_rr = A_px_p+B_pu^* ,(x_p = x_r)\\
