@@ -255,8 +255,7 @@ here). To conclude, it is not ideal for parameter estimation(system identificati
 
 ## Summarize
 
-$$
-\begin{aligned}
+$$ \begin{aligned}
 \text{System Dynamics}& \\
 &\dot{x}_p=A_px_p+B_p\Lambda u +B_p\delta_p(x_p)\\
 \text{Total Control Law}& \\
@@ -271,8 +270,7 @@ $$
 &\sigma(x_p,u_n)\triangleq[\sigma_p(x_p)\quad u_n]^T\\
 &\dot{x}_r=A_rx_r+B_rr\\
 &A_r^TP+PA_r=-Q\\
-\end{aligned}
-$$
+\end{aligned} $$
 
 ## Improve Transient Dynamics
 
@@ -471,7 +469,7 @@ $$
 define
 $$
 \begin{aligned}
-\widetilde{W}_x &= \hat{W}_x - W_x^{\*}\\
+\widetilde{W}_x &= \hat{W}_x - W_x^{\*} \\
 \widetilde{W}_r &= \hat{W}_r - W_r^{\*}
 \end{aligned}
 $$
