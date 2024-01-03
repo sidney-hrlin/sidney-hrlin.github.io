@@ -15,7 +15,7 @@ Without loss of generality, we define open loop system dynamics in the form of
 $$
 \dot{x}_p=A_px_p+B_p\Lambda u +B_p\delta_p(x_p)
 $$
-where $A_p,B_p$ are known system matrix, $x_p$ is system states,$u$ is control.
+where $A_p,B_p$ are known system matrix, $x_p$ is system states, $u$ is control.
 
 Dimensionality:
 $$
@@ -53,7 +53,7 @@ W_p &\in \Re^{n_s \times m}\\
 \sigma_p &\in \Re^{n_s \times 1}
 \end{aligned}
 $$
-where $W_p$ is unknown weights,$\sigma_p$ is known basis function which is defined as
+where $W_p$ is unknown weights, $\sigma_p$ is known basis function which is defined as
 $$
 \begin{aligned}
 &\sigma_p(x_p)=[\sigma_{p_1}(x_p) \ \cdots \ \sigma_{p_s}(x_p)] \\
@@ -77,7 +77,7 @@ Now, let's design nominal control for ideal system.
 $$
 u = u_n + u_a = u_n = -K_xx_p+K_rr
 $$
-where $K_x$ is feedback gain,$ x_p$ is feedback state,$ K_r$ is feedforward gain,$ r$ is feedforward command.
+where $K_x$ is feedback gain, $ x_p$ is feedback state, $ K_r$ is feedforward gain, $ r$ is feedforward command.
 
 Dimensionality
 $$
@@ -237,7 +237,7 @@ $$
 &=-[e^TQ(A_re-B_p\Lambda\widetilde{W}^T\sigma(e+x_r,u_n))+(A_re-B_p\Lambda\widetilde{W}^T\sigma(e+x_r,u_n))^TQe]
 \end{aligned}
 $$
-Since $e,x_r,u_n$ are bounded,$A_r$ is Hurwitz,$\widetilde{W} = \hat{W} - W = \hat{W} - Constant$ is bounded.
+Since $e,x_r,u_n$ are bounded, $A_r$ is Hurwitz, $\widetilde{W} = \hat{W} - W = \hat{W} - Constant$ is bounded.
 According to Barbalet Lemma, we can conclude that
 $$
 \begin{aligned}
@@ -506,7 +506,7 @@ Stability Theorem,choose Lyapunov function as
 $$
 V=e^TPe+\gamma_x^{-1}\widetilde{W_x}^T\widetilde{W_x}+\gamma_r^{-1}\widetilde{W_r}^T\widetilde{W_r}
 $$
-where $\gamma_x$ is learning rate for state feedback,$\gamma_r$ is learning rate for input feedforward,,and $P$ is a positive definite matrix
+where $\gamma_x$ is learning rate for state feedback, $\gamma_r$ is learning rate for input feedforward,,and $P$ is a positive definite matrix
 $(P\succ0)$ which satisfy following continuous Lyapunov Equation:
 $$
 A_r^TP+PA_r=-Q
@@ -610,7 +610,7 @@ $$
 &\Omega_0:\{\Vert e\Vert_{l_2} \le \frac{2\lambda_{max}(P)\xi_{max}}{\lambda_{min}(Q)}:= e_0 \}
 \end{aligned}
 $$
-If state tracking error enters compact set $\Omega_1$ in finite time,it will remain inside for all future time. Note that $\Omega_0$ is compact in e space,however not compact in $\Delta\theta$ space. Therefore $\Delta\theta$ is not restricted at all. Inside $\Omega_0$,$\dot{V}$ can be positive,as a consequence,$\Delta\theta$ can grow unbounded even though e is bounded. This is known as "Parameter Drifting".This shows that MRAC law $\dot{\theta}=-\Gamma_\theta\phi e^TPB_p$ is not robust to bounded disturbances,no matter how small the latter are.
+If state tracking error enters compact set $\Omega_1$ in finite time,it will remain inside for all future time. Note that $\Omega_0$ is compact in e space,however not compact in $\Delta\theta$ space. Therefore $\Delta\theta$ is not restricted at all. Inside $\Omega_0$, $\dot{V}$ can be positive,as a consequence, $\Delta\theta$ can grow unbounded even though e is bounded. This is known as "Parameter Drifting".This shows that MRAC law $\dot{\theta}=-\Gamma_\theta\phi e^TPB_p$ is not robust to bounded disturbances,no matter how small the latter are.
 
 ![](MRACPresentation.assets/projection.png)
 
