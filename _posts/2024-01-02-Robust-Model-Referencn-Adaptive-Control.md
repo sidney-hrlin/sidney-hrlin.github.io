@@ -254,7 +254,7 @@ any way.(Actually, it should satisfy certain conditions(Persistent Excitation) t
 here). To conclude, it is not ideal for parameter estimation(system identification).
 
 ## Summarize
-
+Standard MRAC
 $$
 \begin{aligned}
 \text{System Dynamics}& \\
@@ -459,7 +459,7 @@ $$
 \end{aligned}
 $$
 From above,we know that if we have some pre-known knowledge about plant dynamics,we can estimate the ideal
-gain $W_x^*$ and $W_r^*$ and set it as initial condition. Initial condition is very important influence factors on performance of the MRAC,let's take a look
+gain $W_x^\*$ and $W_r^\*$ and set it as initial condition. Initial condition is very important influence factors on performance of the MRAC,let's take a look
 
 ![](MRACPresentation.assets/init_val_compare.png)
 
@@ -489,8 +489,9 @@ Now let's consider error dynamics
 define
 $$
 e \triangleq x_p-x_r
-we have
 $$
+
+then we have
 
 $$
 \begin{aligned}
@@ -673,6 +674,7 @@ $$
 
 ## Projection Operator
 
+The projection operator is represented by equation:
 $$
 \begin{equation}
 proj(\theta,\Gamma y) = \left\{\begin{aligned}\frac {\Gamma\nabla{f}(\nabla{f})^T}{(\nabla{f})^T\Gamma\nabla{f}} yf & & {f>0\land y^T\nabla{f}>0}\\
