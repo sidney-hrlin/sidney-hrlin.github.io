@@ -12,22 +12,18 @@ operating under matched uncertainties?"
 ## Problem Setup
 
 Without loss of generality, we define open loop system dynamics in the form of
-```math
-\dot{x}_p=A_px_p+B_p\Lambda u +B_p\delta_p(x_p)
-```
+$$\dot{x}_p=A_px_p+B_p\Lambda u +B_p\delta_p(x_p)$$
 where $A_p,B_p$ are known system matrix, $x_p$ is system states, $u$ is control.
 
 Dimensionality:
-```math
-\begin{aligned}
+$$ \begin{aligned}
 x_p &\in \Re^{n_p \times 1} \\
 A_p &\in \Re^{n_p \times n_p} \\
 B_p &\in \Re^{n_p \times m} \\
 \Lambda &\in \Re^{m \times m} \\
 u &\in \Re^{m \times1} \\
 \delta_p &\in \Re^{m \times 1} \\
-\end{aligned}
-```
+\end{aligned} $$
 $\Lambda$ is unknown control effectiveness uncertainty and is defined as
 ```math
 \Lambda = \left[
