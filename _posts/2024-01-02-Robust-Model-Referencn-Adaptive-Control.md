@@ -3,7 +3,7 @@
 ## Motivation
 
 In the design of vehicle control system, it is essential to provide closed-loop stability, adequate command
-traking performance, as well as robustness to model uncertainties, control failures and environmental disturbances.
+tracking performance, as well as robustness to model uncertainties, control failures and environmental disturbances.
 However, in the presence of matched uncertainties, a deterioration of the system nominal(baseline) control is
 inevitable. We pose the question:"Can we restore a given nominal closed-loop performance of the system, while
 operating under matched uncertainties?"
@@ -310,10 +310,10 @@ reference system matrix $A_r$. However the analytical stability properties of cl
 next question is: What is the proper parameter adjusting mechanism of $L_v$ gain for the error dynamics? Well,
 it seems a good idea to borrow it from observer design.
 
-We choose $L_v = P_vR_v^{-1}$ where $P_v = P_v^T \succ0$ is the unqiue solution of the filter
-algebraic riccati equation with identity $C_v$ matrix.
+We choose $L_v = P_vR_v^{-1}$ where $P_v = P_v^T \succ0$ is the unique solution of the filter
+algebraic Riccati equation with identity $C_v$ matrix.
 
-The FARE(filter algebraic riccati equation) is written as follow:
+The FARE(filter algebraic Riccati equation) is written as follow:
 $$
 \begin{aligned}
 &P_vA_r^T+A_rP_v - P_vC_v^TR_v^{-1}C_vP_v + Q_v = 0, \quad C_v = I_{nxn} \text{ in our cases}\\
@@ -331,7 +331,7 @@ $$
 where $v$ is a positive real scalar. Therefore, $L_v \to \infty \text{ as } v \to 0$, which leads to faster
 error dynamics.
 
-Now, we substitute $L_v$ with $P_vR_v^{-1}$ and rewrite filter algebraic riccati equation in terms of $A_v$,
+Now, we substitute $L_v$ with $P_vR_v^{-1}$ and rewrite filter algebraic Riccati equation in terms of $A_v$,
 we can get following results:
 $$
 \begin{aligned}
@@ -368,9 +368,9 @@ Hence the system is stable ISL.
 
 ## Attack to Steering/Throttle/Brake Problem with MRAC
 
-In previous section,we design MRAC adption law by Lyapunov Stability Theorem in most common case
+In previous section,we design MRAC adaption law by Lyapunov Stability Theorem in most common case
 and found its error dynamics satisfies UUB condition and all states are uniformly bounded in time.
-Now let's design a model reference adaptive controller for vehicle longitudinal and lateral control.Let's take longitudinal MRAC as example,the motivation of this project is to achieve better inner loop performance(acceleration tracking performance) in the presence of various system uncertainties (nonlinear actuator,inaccurate calibration table,nonideal road conditions). Our goal is design a controller which will learn the system uncertainties and recover ideal performance from it.
+Now let's design a model reference adaptive controller for vehicle longitudinal and lateral control.Let's take longitudinal MRAC as example,the motivation of this project is to achieve better inner loop performance(acceleration tracking performance) in the presence of various system uncertainties (nonlinear actuator,inaccurate calibration table,non-ideal road conditions). Our goal is design a controller which will learn the system uncertainties and recover ideal performance from it.
 
 In this project,we identificate throttle and brake dynamics as second-order system (plant model) as follow
 $$
