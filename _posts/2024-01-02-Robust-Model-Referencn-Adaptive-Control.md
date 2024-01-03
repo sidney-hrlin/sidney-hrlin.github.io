@@ -444,10 +444,10 @@ Now,we need to design control law $u$ to make real system behave just like refer
 $$
 u=W_x^Tx_p+W_r^Tr
 $$
-Assume there exist ideal gain $W_x^\*$ and $W_r^\*$ such we can perfectly tracking the reference model,thus
+Assume there exist ideal gain $W_x^{\*}$ and $W_r^{\*}$ such we can perfectly tracking the reference model,thus
 $$
 \begin{aligned}
-&A_rx_r+B_rr = A_px_p+B_pu^\* ,(x_p = x_r)\\
+&A_rx_r+B_rr = A_px_p+B_pu^{\*} ,(x_p = x_r)\\
 &(A_r-A_p)x_r+B_rr-B_p(W_x^{*^T}x_r+W_r^{*^T}r)=0\\
 &[(A_r-A_p)-B_pW_x^{*^T}]x_r+(B_r-B_pW_r^{*^T})r=0\\
 \\
@@ -459,7 +459,7 @@ $$
 \end{aligned}
 $$
 From above,we know that if we have some pre-known knowledge about plant dynamics,we can estimate the ideal
-gain $W_x^\*$ and $W_r^\*$ and set it as initial condition. Initial condition is very important influence factors on performance of the MRAC,let's take a look
+gain $W_x^{\*}$ and $W_r^{\*}$ and set it as initial condition. Initial condition is very important influence factors on performance of the MRAC,let's take a look
 
 ![](MRACPresentation.assets/init_val_compare.png)
 
@@ -471,8 +471,8 @@ $$
 define
 $$
 \begin{aligned}
-\widetilde{W}_x &= \hat{W}_x - W_x^\*\\
-\widetilde{W}_r &= \hat{W}_r - W_r^\*
+\widetilde{W}_x &= \hat{W}_x - W_x^{\*}\\
+\widetilde{W}_r &= \hat{W}_r - W_r^{\*}
 \end{aligned}
 $$
 Plug into plant model,we have
@@ -480,7 +480,7 @@ $$
 \begin{aligned}
 \dot{x}_p&=A_px_p+B_p(\hat{W}_x^Tx_p+\hat{W}_r^Tx_r)\\
 &=A_px_p+B_p(\hat{W}_x^Tx_p+\hat{W}_r^Tx_r+\color{red}{W_x^{*^T}x_p-W_x^{*^T}x_p+W_r^{*^T}r-W_r^{*^T}r})\\
-&=A_px_p+B_pW_x^{*^T}x_p+B_pW_r^{*^T}r+B_p[(\hat{W}_x - W_x^\*)^Tx_p+(\hat{W}_r - W_r^\*)^Tr]\\
+&=A_px_p+B_pW_x^{*^T}x_p+B_pW_r^{*^T}r+B_p[(\hat{W}_x - W_x^{\*})^Tx_p+(\hat{W}_r - W_r^{\*})^Tr]\\
 &=\color{green}{A_rx_p+B_rr}+\color{red}{B_p(\widetilde{W_x}^Tx_p+\widetilde{W}_r^Tr)}
 \end{aligned}
 $$
@@ -688,7 +688,7 @@ What does projection operator do?
 ![](MRACPresentation.assets/projection_math.png)
 
 
-Here,we assume that the ground turth $\theta^\*$ lives in a compact set ,so make sure $\theta^\*$ is inside of preselected convex set $\Omega_1$
+Here,we assume that the ground turth $\theta^{\*}$ lives in a compact set ,so make sure $\theta^{\*}$ is inside of preselected convex set $\Omega_1$
 
 Convex Property of Projection Operator
 $$
