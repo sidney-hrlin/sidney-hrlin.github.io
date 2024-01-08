@@ -173,8 +173,10 @@ $$
 $$
 \xi = 
 \begin{bmatrix} x(0)\\ x(1) \\ \vdots  \\x(N) \\ u(-1) \\ u(0) \\u(1)\\\vdots\\u(N-1)\\ \Delta u(-1)\\ \Delta u(0) \\ \Delta u(1) \\ \vdots \\\Delta u(N-1)\\\delta(-1) \\ \delta(0) \\\cdots \\\delta(N-1)\end{bmatrix}
-\\ \\
-\xi \in \real^{((N+1)n_s + (N+1)n_c + *(N+1)n_c +(N+1)n_c)\times1 }=\real^{N_p\times1 }
+$$
+ 
+$$
+\xi \in \Re^{((N+1)n_s + (N+1)n_c + *(N+1)n_c +(N+1)n_c)\times1 }=\real^{N_p\times1 }
 $$
  
 $$
@@ -241,9 +243,7 @@ u(k) &=&& u(k-1) + \Delta u(k)\\
 u(N-1) &=&& u(N-2) + \Delta u(N-1)
 \end{aligned}
 $$
-
-then,
-
+equivalently,
 $$
 \begin{aligned}
 0 &=&& A_d(0)x(0) - x(1)+B_d(0)u(0)+ \delta(0) \\
