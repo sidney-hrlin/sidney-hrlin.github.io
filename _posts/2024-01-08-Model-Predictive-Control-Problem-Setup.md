@@ -228,7 +228,7 @@ u(k) &=&& u(k-1) + \Delta u(k)\\
 u(N-1) &=&& u(N-2) + \Delta u(N-1)
 \end{aligned}
 $$
-equivalently,
+equivalently
 $$
 \begin{aligned}
 0 &=&& A_d(0)x(0) - x(1)+B_d(0)u(0)+ \delta(0) \\
@@ -251,7 +251,7 @@ state constraint
 $$
 x_{min}(k)\leq x(k) \leq x_{max}(k)
 $$
-control  constraint
+control constraint
 $$
 u_{min}(k)\leq u(k) \leq u_{max}(k)
 $$
