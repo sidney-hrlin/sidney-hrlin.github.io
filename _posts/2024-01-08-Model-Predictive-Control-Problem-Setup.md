@@ -118,7 +118,6 @@ J_2 &=&& \frac{1}{2}||u-u_{ref}||_{S} \\
 \end{aligned}
 $$
 
-
 Cost $J_3$: control smoothness,where $R$ is a semi-positive definite matrix
 $$
 \begin{aligned}
@@ -153,28 +152,14 @@ $$
 &=&&\mathop{\arg \min}\limits_{x,u,\Delta u} J^*
 \end{aligned}
 $$
-define decision variable $\xi$  as
+define decision variable $\xi$ as 
 $$
 \begin{aligned}
-\mathop{\arg \min}\limits_{x,u,\Delta u} J
-&=&& \mathop{\arg \min}\limits_{x,u,\Delta u}(J_1 + J_2 + J_3)\\
-&=&& \mathop{\arg \min}\limits_{x,u,\Delta u}\frac{1}{2}
-         [\sum_{k=0}^Nx(k)^TQ(k)x(k)-2(Q(k)x_{ref}(k))^Tx(k) + x_{ref}(k)^TQ(k)x_{ref}(k) + \\
-         &&&\qquad\qquad\ \sum_{k=0}^{N-1}u(k)^TS(k)u(k)-2(S(k)u_{ref}(k))^Tu(k) + u_{ref}(k)^TS(k)u_{ref}(k) +\\
-         &&&\qquad\qquad\ \sum_{k=0}^{N-1}\Delta u^TR\Delta u ]\\
-&=&& \mathop{\arg \min}\limits_{x,u,\Delta u}\frac{1}{2}
-         [\sum_{k=0}^Nx(k)^TQ(k)x(k)-2(Q(k)x_{ref}(k))^Tx(k) + \\
-         &&&\qquad\qquad\ \sum_{k=0}^{N-1}u(k)^TS(k)u(k)-2(S(k)u_{ref}(k))^Tu(k) + \\
-         &&&\qquad\qquad\ \sum_{k=0}^{N-1}\Delta u^TR\Delta u ] \\
-&=&&\mathop{\arg \min}\limits_{x,u,\Delta u} J^*
-\end{aligned}
-$$
- 
-$$
 \xi = 
 \begin{bmatrix} x(0)\\ x(1) \\ \vdots  \\x(N) \\ u(-1) \\ u(0) \\u(1)\\\vdots\\u(N-1)\\ \Delta u(-1)\\ \Delta u(0) \\ \Delta u(1) \\ \vdots \\\Delta u(N-1)\\\delta(-1) \\ \delta(0) \\\cdots \\\delta(N-1)\end{bmatrix}
+\end{aligned}
 $$
- 
+Then rewrite the optimization problem
 $$
 \xi \in \Re^{((N+1)n_s + (N+1)n_c + *(N+1)n_c +(N+1)n_c)\times1 }=\real^{N_p\times1 }
 $$
