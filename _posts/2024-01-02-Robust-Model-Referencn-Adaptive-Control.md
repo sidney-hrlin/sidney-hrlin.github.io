@@ -491,9 +491,7 @@ define
 $$
 e \triangleq x_p-x_r
 $$
-
 then we have
-
 $$
 \begin{aligned}
 \dot{e}
