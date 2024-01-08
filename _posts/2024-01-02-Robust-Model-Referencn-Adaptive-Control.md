@@ -7,7 +7,8 @@ tracking performance, as well as robustness to model uncertainties, control fail
 However, in the presence of matched uncertainties, a deterioration of the system nominal(baseline) control is
 inevitable. We pose the question:"Can we restore a given nominal closed-loop performance of the system, while
 operating under matched uncertainties?"
-![](_posts_assets/2024-01-02-Robust-Model-Referencn-Adaptive-Control.assets/MRACPresentation.assets/mrac_test.png)
+
+![mrac_test](2024-01-02-Robust-Model-Referencn-Adaptive-Control.assets/mrac_test.png)
 
 ## Problem Setup
 
@@ -461,7 +462,7 @@ $$
 From above,we know that if we have some pre-known knowledge about plant dynamics,we can estimate the ideal
 gain $W_x^\*$ and $W_r^\*$ and set it as initial condition. Initial condition is very important influence factors on performance of the MRAC,let's take a look
 
-![](MRACPresentation.assets/init_val_compare.png)
+![init_val_compare](2024-01-02-Robust-Model-Referencn-Adaptive-Control.assets/init_val_compare.png)
 
 
 Alright,let's continue. $A_p$ and $B_p$ are unknown here(in the contrast to previous section),we need to estimate them,so the control we have is
@@ -532,7 +533,7 @@ $$
 
 ## Parameter Drifting: The Sudden Failure
 
-![](MRACPresentation.assets/parameter_drifting.png)
+![parameter_drifting](2024-01-02-Robust-Model-Referencn-Adaptive-Control.assets/parameter_drifting.png)
 
 
 Plant model with uniformly bounded  disturbances
@@ -613,7 +614,7 @@ $$
 $$
 If state tracking error enters compact set $\Omega_1$ in finite time,it will remain inside for all future time. Note that $\Omega_0$ is compact in e space,however not compact in $\Delta\theta$ space. Therefore $\Delta\theta$ is not restricted at all. Inside $\Omega_0$, $\dot{V}$ can be positive,as a consequence, $\Delta\theta$ can grow unbounded even though e is bounded. This is known as "Parameter Drifting".This shows that MRAC law $\dot{\theta}=-\Gamma_\theta\phi e^TPB_p$ is not robust to bounded disturbances,no matter how small the latter are.
 
-![](MRACPresentation.assets/projection.png)
+![projection](2024-01-02-Robust-Model-Referencn-Adaptive-Control.assets/projection.png)
 
 
 In order to resolve this problem,we need to pose a constraint for $\Delta\theta$ to make it stays in a compact set. But how? There are several methods to attack this problem.
@@ -687,7 +688,7 @@ f(\theta)=\frac{(1+\varepsilon)\theta^T\theta - \Vert\theta\Vert^{max}}{\varepsi
 $$
 What does projection operator do?
 
-![](MRACPresentation.assets/projection_math.png)
+![projection_math](2024-01-02-Robust-Model-Referencn-Adaptive-Control.assets/projection_math.png)
 
 
 Here,we assume that the ground turth $\theta^\*$ lives in a compact set ,so make sure $\theta^\*$ is inside of preselected convex set $\Omega_1$
@@ -734,14 +735,13 @@ $$
 
 ## Block Diagram
 
-![](MRACPresentation.assets/mrac_block_diagram.png)
+![mrac_block_diagram](2024-01-02-Robust-Model-Referencn-Adaptive-Control.assets/mrac_block_diagram.png)
 
 ## Performance
 
-![](MRACPresentation.assets/rd1.png)
+![rd1](2024-01-02-Robust-Model-Referencn-Adaptive-Control.assets/rd1.png)
 
-![](MRACPresentation.assets/rd2.png)
+![rd2](2024-01-02-Robust-Model-Referencn-Adaptive-Control.assets/rd2.png)
 
-![](MRACPresentation.assets/rd3.png)
-
+![rd3](2024-01-02-Robust-Model-Referencn-Adaptive-Control.assets/rd3.png)
 
