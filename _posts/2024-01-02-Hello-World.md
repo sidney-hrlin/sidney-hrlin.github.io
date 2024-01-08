@@ -3,4 +3,4 @@ This is the very first blog of *Orange Control Space*.
 
 From now on, I will share my experience and knowledge of control engineering and something I might be interested in.
 
-![kedaya](assets/kedaya.jpg)
+<imag src="https://github.com/sidney-hrlin/sidney-hrlin.github.io/blob/main/_posts/2024-01-02-Hello-World.assets/kedaya.jpg">
