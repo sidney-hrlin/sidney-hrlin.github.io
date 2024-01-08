@@ -1,4 +1,4 @@
-## MPC Problem Setup
+## Model Predictive Control Problem Setup
 
 ## Linearization
 
@@ -12,9 +12,11 @@ $$
 $$
 define
 $$
+\begin{aligned}
 A &=& \left.\frac{\partial f}{\partial x}\right \vert_{(\hat{x},u_0)} \\
-B &=&  \left.\frac{\partial f}{\partial u}\right \vert_{(\hat{x},u_0)}\\
+B &=& \left.\frac{\partial f}{\partial u}\right \vert_{(\hat{x},u_0)} \\
 \dot{\hat{x}} &=& f(\hat{x},u_0)
+\end{aligned}
 $$
 rewrite system in error space
 $$
@@ -37,12 +39,10 @@ Assumption:
 
 $$
 \frac{d}{dt}[e^{-At}(x-\hat{x})] = -e^{-At}A(x-\hat{x})+e^{-At}(\dot{x} - \dot{\hat{x}}) \\
-
 \frac{d}{dt}[e^{-At}(x-\hat{x})]  + e^{-At}A(x-\hat{x}) = e^{-At}(\dot{x} - \dot{\hat{x}}) \\
-\\
+$$
+$$
 \begin{align}
-
-
 e^{-At}(\dot{x} - \dot{\hat{x}}) &= e^{-At}(A(x-\hat{x})+B(u-u_0)) \\
                                                            &= e^{-At}A(x-\hat{x})+e^{-At}B(u-u_0)\\
                                                            &= e^{-At}A(x-\hat{x}) + \frac{d}{dt}[e^{-At}(x-\hat{x})] 
@@ -59,7 +59,7 @@ e^{-At}(x-\hat{x})\vert_{kh}^{kh+h} &=&& \int_{kh}^{kh+h}e^{-At}B(u-u_0)dt\\
 e^{-A(kh+h)}(x(kh+h)-\hat{x}(kh+h))- e^{-Akh}(x(kh)-\hat{x}(kh))&=&& \int_{kh}^{kh+h}e^{-At}B(u-u_0)dt\\
 \end{aligned}
 $$
-
+then we have,
 $$
 \begin{aligned}
 x(kh+h)-\hat{x}(kh+h)&= e^{A(kh+h)}[e^{-Akh}(x(kh)-\hat{x}(kh)) + \int_{kh}^{kh+h}e^{-At}B(u-u_0)dt]\\
@@ -67,7 +67,6 @@ x(kh+h)-\hat{x}(kh+h)&= e^{A(kh+h)}[e^{-Akh}(x(kh)-\hat{x}(kh)) + \int_{kh}^{kh+
 &=e^{Ah}(x(kh)-\hat{x}(kh))+\int_{kh}^{kh+h}e^{A(kh+h-t)}dtB(u(kh)-u_0)\\
 \end{aligned}
 $$
-
 let
 $$
 \begin{aligned}
@@ -77,7 +76,7 @@ t &= kh+h, v = 0\\
 dv &= -dt
 \end{aligned}
 $$
-
+subs in, we have
 $$
 \begin{aligned}
 x(kh+h)-\hat{x}(kh+h)&=e^{Ah}(x(kh)-\hat{x}(kh))+\int_{kh}^{kh+h}e^{A(kh+h-t)}dtB(u(kh)-u_0)\\
@@ -95,7 +94,7 @@ Define residue $\delta(k)$ as
 $$
 \delta(k) = \hat{x}(k+1)  - A_d \hat{x}(k)- B_du_0
 $$
-
+thus 
 $$
 x(k+1) = A_dx(k)+B_du(k)+ \delta(k)
 $$
@@ -381,7 +380,7 @@ $$
  \delta(N-1)\\
 \end{bmatrix}}_{u_{\xi}}
 $$
-
+The constraints could be written in compact form:
 $$
 l_{\xi} \leq A_c \xi \leq u_{\xi}
 \\\\
@@ -391,7 +390,7 @@ A_c \in \real^{N_c \times N_p}
 $$
 
 ## Problem Setup
-
+The model predictive control problem could be written in compact form:
 $$
 \mathop{\arg \min}\limits_{\xi}\frac{1}{2} 
 \xi ^T P \xi +q^T\xi \\
