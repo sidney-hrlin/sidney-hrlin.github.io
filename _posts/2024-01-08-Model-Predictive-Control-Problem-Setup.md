@@ -161,7 +161,7 @@ $$
 $$
  
 $$
-\xi \in \Re^{((N+1)n_s + (N+1)n_c + *(N+1)n_c +(N+1)n_c)\times1 }=\real^{N_p\times1 }
+\xi \in \Re^{((N+1)n_s + (N+1)n_c + *(N+1)n_c +(N+1)n_c)\times1 }=\Re^{N_p\times1 }
 $$
 rewrite the optimization problem with decision variable 
 $$
