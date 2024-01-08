@@ -159,11 +159,11 @@ $$
 \begin{bmatrix} x(0)\\ x(1) \\ \vdots  \\x(N) \\ u(-1) \\ u(0) \\u(1)\\\vdots\\u(N-1)\\ \Delta u(-1)\\ \Delta u(0) \\ \Delta u(1) \\ \vdots \\\Delta u(N-1)\\\delta(-1) \\ \delta(0) \\\cdots \\\delta(N-1)\end{bmatrix}
 \end{aligned}
 $$
-Then rewrite the optimization problem
+ 
 $$
 \xi \in \Re^{((N+1)n_s + (N+1)n_c + *(N+1)n_c +(N+1)n_c)\times1 }=\real^{N_p\times1 }
 $$
- 
+rewrite the optimization problem with decision variable 
 $$
 \begin{aligned}
 \mathop{\arg \min}\limits_{x,u,\delta u} J^*
