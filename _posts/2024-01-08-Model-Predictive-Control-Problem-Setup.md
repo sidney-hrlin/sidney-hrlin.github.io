@@ -219,10 +219,12 @@ $$
 
 initial condition constraint
 $$
+\begin{aligned}
 x(0) &=& x(0) (known) \\
 u(-1) &=& u(-1) (known) \\ 
 \Delta u(-1) &=& 0 \\
 \delta(-1) &=& 0
+\end{aligned}
 $$
 system  constraint
 $$
@@ -243,7 +245,7 @@ u(k) &=&& u(k-1) + \Delta u(k)\\
 u(N-1) &=&& u(N-2) + \Delta u(N-1)
 \end{aligned}
 $$
-
+then,
 $$
 \begin{aligned}
 0 &=&& A_d(0)x(0) - x(1)+B_d(0)u(0)+ \delta(0) \\
