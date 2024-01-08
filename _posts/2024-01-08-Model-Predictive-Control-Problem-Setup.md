@@ -137,7 +137,7 @@ J
          &&&\quad\sum_{k=0}^{N-1}\Delta u^TR\Delta u ]
 \end{aligned}
 $$
-
+ 
 $$
 \begin{aligned}
 \mathop{\arg \min}\limits_{x,u,\Delta u} J
@@ -153,7 +153,6 @@ $$
 &=&&\mathop{\arg \min}\limits_{x,u,\Delta u} J^*
 \end{aligned}
 $$
-
 define decision variable $\xi$  as
 $$
 \begin{aligned}
