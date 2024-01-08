@@ -1,4 +1,4 @@
-## Model Predictive Control Problem Setup
+# Model Predictive Control Problem Setup
 
 ## Linearization
 
@@ -59,7 +59,7 @@ e^{-At}(x-\hat{x})\vert_{kh}^{kh+h} &=&& \int_{kh}^{kh+h}e^{-At}B(u-u_0)dt\\
 e^{-A(kh+h)}(x(kh+h)-\hat{x}(kh+h))- e^{-Akh}(x(kh)-\hat{x}(kh))&=&& \int_{kh}^{kh+h}e^{-At}B(u-u_0)dt\\
 \end{aligned}
 $$
-then we have,
+ 
 $$
 \begin{aligned}
 x(kh+h)-\hat{x}(kh+h)&= e^{A(kh+h)}[e^{-Akh}(x(kh)-\hat{x}(kh)) + \int_{kh}^{kh+h}e^{-At}B(u-u_0)dt]\\
@@ -169,14 +169,14 @@ $$
 &=&&\mathop{\arg \min}\limits_{x,u,\Delta u} J^*
 \end{aligned}
 $$
-
+ 
 $$
 \xi = 
 \begin{bmatrix} x(0)\\ x(1) \\ \vdots  \\x(N) \\ u(-1) \\ u(0) \\u(1)\\\vdots\\u(N-1)\\ \Delta u(-1)\\ \Delta u(0) \\ \Delta u(1) \\ \vdots \\\Delta u(N-1)\\\delta(-1) \\ \delta(0) \\\cdots \\\delta(N-1)\end{bmatrix}
 \\ \\
 \xi \in \real^{((N+1)n_s + (N+1)n_c + *(N+1)n_c +(N+1)n_c)\times1 }=\real^{N_p\times1 }
 $$
-
+ 
 $$
 \begin{aligned}
 \mathop{\arg \min}\limits_{x,u,\delta u} J^*
@@ -189,7 +189,6 @@ $$
 \xi
 \end{aligned}
 $$
-
 Define hessian matrix $P$ and gradient matrix $q$ as
 $$
 \begin{aligned}
@@ -215,7 +214,6 @@ $$
 $$
 
 ## Constraint
-
 initial condition constraint
 $$
 \begin{aligned}
@@ -235,7 +233,6 @@ x(k+1) &=&& A_d(k)x(k)+B_d(k)u(k)+ \delta(k) \\
 &\vdots &&\\
 x(N) &=&& A_d(N-1)x(N-1)+B_d(N-1)u(N-1)+ \delta(N-1) \\
 \\\\
-
 u(0) &=&& u(-1) + \Delta u(0)\\
 u(1) &=&& u(0) + \Delta u(1)\\
 &\vdots &&\\
@@ -244,7 +241,9 @@ u(k) &=&& u(k-1) + \Delta u(k)\\
 u(N-1) &=&& u(N-2) + \Delta u(N-1)
 \end{aligned}
 $$
+
 then,
+
 $$
 \begin{aligned}
 0 &=&& A_d(0)x(0) - x(1)+B_d(0)u(0)+ \delta(0) \\
@@ -253,9 +252,7 @@ $$
 0 &=&& A_dx(k) - x(k+1)+B_du(k)+ \delta(k) \\
 &\vdots &\\
 0 &=&& A_d(N-1)x(N-1) - x(N)+B_d(N-1)u(N-1)+ \delta(N-1) \\
-
 \\\\
-
 0 &=&& u(-1) - u(0) + \Delta u(0)\\
 0 &=&& u(0) - u(1)+ \Delta u(1)\\
 &\vdots &\\
@@ -385,9 +382,9 @@ The constraints could be written in compact form:
 $$
 l_{\xi} \leq A_c \xi \leq u_{\xi}
 \\\\
-\xi \in \real^{((N+1)n_s + (N+1)n_c + (N+1)n_c +(N+1)n_c)\times1 }=\real^{N_p\times1 }\\
-l_{\xi},u_{\xi} \in \real^{((N+1)n_s + (N+1)n_c + (N+1)n_s +(N+1)n_c + (N+1)n_c + (N+1)n_s)\times1 }=\real^{N_c\times1}\\
-A_c \in \real^{N_c \times N_p}
+\xi \in \Re^{((N+1)n_s + (N+1)n_c + (N+1)n_c +(N+1)n_c)\times1 }=\Re^{N_p\times1 }\\
+l_{\xi},u_{\xi} \in \Re^{((N+1)n_s + (N+1)n_c + (N+1)n_s +(N+1)n_c + (N+1)n_c + (N+1)n_s)\times1 }=\Re^{N_c\times1}\\
+A_c \in \Re^{N_c \times N_p}
 $$
 
 ## Problem Setup
