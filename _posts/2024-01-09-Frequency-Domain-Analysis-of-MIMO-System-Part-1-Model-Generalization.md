@@ -1,4 +1,4 @@
-# Part 1. Model Generalization
+# Frequency Domain Analysis of MIMO System: Part 1. Model Generalization
 In this page, we present a generalized state-space linear-time-invariant plant and controller models for control design and frequency domain analysis  that will be used in other sections. Models for closed-loop simulation and frequency domain analysis at both plant input and plant output are also derived.
 
 ## **1. System Modeling** 
@@ -16,7 +16,7 @@ where
 $$
 x \in R ^{n_x \cdot 1}, u \in R ^{n_u \cdot 1},  y \in R^{n_y \cdot 1}
 $$
-
+ 
 $$
 \begin{align}
 A_p \in R^{n_x \cdot n_x} , B_p\in R^{n_x \cdot n_u}  \\  
@@ -36,7 +36,7 @@ $$
 x_c \in R^{n_{x_c} \cdot 1}, \quad u \in R^{n_u \cdot 1}, 
 \quad y \in R^{n_y \cdot 1},\quad r \in R^{n_r \cdot 1} \\ \\
 $$
-
+ 
 $$
 \begin{align}
 &A_c \in R^{n_{x_c}\cdot n_{x_c}}, 
@@ -51,7 +51,7 @@ The plant and controller is connected as shown in following block diagram:
 ![](/assets/2024-01-09-Frequency-Domain-Analysis-of-MIMO-System-Part-1-Model-Generalization.assets/generalized_model_block_diagram.jpeg)
 
 ## **2. Derivation of Closed-loop Dynamics:**
-
+ 
 $$
 \begin{align}
 &&u&=C_c x_c + D_{c_1}y+ D_{c_2}r\\
@@ -84,12 +84,13 @@ y &= C_px+D_pu \\
 &=(I+D_pZ^{-1}D_{c_1})C_px + D_p Z^{-1}C_cx_c + D_p Z^{-1}B_{c_2}r
 \end{align}
 $$
-Let us define a augmented state vector $x_a$ in the form:
+Let us define a augmented state vector $x_a$ in the form: 
 $$
+\begin{align}
 x_a = \begin{bmatrix}
 x\\x_c
-
 \end{bmatrix}
+\end{align}
 $$
 Then, the closed-loop dynamics can be written as: 
 $$
