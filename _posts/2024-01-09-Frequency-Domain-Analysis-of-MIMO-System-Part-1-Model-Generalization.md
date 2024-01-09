@@ -16,7 +16,7 @@ where
 $$
 x \in R ^{n_x \cdot 1}, u \in R ^{n_u \cdot 1},  y \in R^{n_y \cdot 1}
 $$
-  
+and 
 $$
 \begin{align}
 A_p \in R^{n_x \cdot n_x} , B_p\in R^{n_x \cdot n_u}  \\  
@@ -36,7 +36,7 @@ $$
 x_c \in R^{n_{x_c} \cdot 1}, \quad u \in R^{n_u \cdot 1}, 
 \quad y \in R^{n_y \cdot 1},\quad r \in R^{n_r \cdot 1} \\ \\
 $$
-  
+and 
 $$
 \begin{align}
 &A_c \in R^{n_{x_c}\cdot n_{x_c}}, 
@@ -163,7 +163,6 @@ $$
 \dot{x} &=&& A_p x + B_pu \\
 &=&& A_p x + B_p(C_cx_c + D_{c_1}y_{in})\\
 &=&& A_p x + B_pC_cx_c + B_pD_{c_1}y_{in}\\\\
-
 y_{out} &= &&C_px +D_pu \\
 &=&&C_px +D_p(C_cx_c + D_{c_1}y_{in})\\
 &=&&C_px +D_pC_cx_c + D_pD_{c_1}y_{in}
