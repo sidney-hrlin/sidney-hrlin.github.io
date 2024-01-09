@@ -195,7 +195,7 @@ $$
 y&= C_{cl}x_a+D_{cl}r
 \end{aligned}
 $$
- 
+where 
 $$
 \begin{aligned}
 A_{cl}&=&&\begin{bmatrix}A_p+B_pZ^{-1}D_{c_1}C_p & B_pZ^{-1}C_c \\ B_{c_1}(I+D_pZ^{-1}D_{c_1})C_p & A_c+B_{c_1}D_pZ^{-1}C_c\end{bmatrix}\\
