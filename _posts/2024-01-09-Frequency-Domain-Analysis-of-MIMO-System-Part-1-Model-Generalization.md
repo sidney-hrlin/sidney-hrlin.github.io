@@ -121,6 +121,7 @@ Then we connect these two system with as input $u_{in}$ and as output $u_{out}$ 
 ![](/assets/2024-01-09-Frequency-Domain-Analysis-of-MIMO-System-Part-1-Model-Generalization.assets/LG_IN.png)
 
 We can show that 
+ 
 $$
 \begin{aligned}
 \dot{x}_c &=&& A_c x_c + B_{c_1}y \\
@@ -211,7 +212,7 @@ $$
 
 |                                      |                       **Plant Input**                        |                       **Plant Output**                       |
 | :----------------------------------: | :----------------------------------------------------------: | :----------------------------------------------------------: |
-|        **State Space Model**         | $$\dot{x}_a &= A_{lu} x_a + B_{lu}u_{in} \\ u_{out}&= C_{lu}x_a+D_{lu}u_{in}$$ | $$\dot{x}_a &= A_{ly} x_a + B_{ly}y_{in} \\y_{out}&= C_{ly}x_a+D_{ly}y_{in}$$ |
+|        **State Space Model**         | $$ \dot{x}_a &= A_{lu} x_a + B_{lu}u_{in} \\ u_{out}&= C_{lu}x_a+D_{lu}u_{in}$$ | $$ \dot{x}_a &= A_{ly} x_a + B_{ly}y_{in} \\y_{out}&= C_{ly}x_a+D_{ly}y_{in}$$ |
 |        **State Space Matrix**        | $$\begin{aligned}A_{lu} &=&& \begin{bmatrix}A_p &0 \\B_{c_1}C_p & A_c\end{bmatrix}\\B_{lu} &=&& \begin{bmatrix}B_p \\B_{c_1}D_p\end{bmatrix}\\C_{lu} &=&& \begin{bmatrix}D_{c_1}C_p &C_c\end{bmatrix} \\D_{lu} &=&& \begin{bmatrix}D_{c_1}D_p\end{bmatrix}\end{aligned}				$$ | $$\begin{aligned} A_{ly}&=&&\begin{bmatrix}A_p &B_pC_c \\0 & A_c\end{bmatrix} \\B_{ly}&=&&  \begin{bmatrix}B_pD_{c_1} \\B_{c_1}\end{bmatrix}\\ C_{ly}&=&& \begin{bmatrix}C_p &D_pC_c\end{bmatrix}\\D_{ly}&=&&\begin{bmatrix}D_pD_{c_1}\end{bmatrix}\end{aligned}$$ |
 |         **Loop Gain** $L(s)$         | $$K(s)G(s) = \\ \quad C_{lu}(sI-A_{lu})^{-1}B_{lu}+D_{lu} $$ | $$G(s)K(s) = \\ \quad C_{ly}(sI-A_{ly})^{-1}B_{ly}+D_{ly} $$ |
 |    **Return Difference** $RD(s)$     |                          $$I+L_u$$                           |                          $$I+L_y$$                           |
