@@ -16,7 +16,7 @@ where
 $$
 x \in R ^{n_x \cdot 1}, u \in R ^{n_u \cdot 1},  y \in R^{n_y \cdot 1}
 $$
- 
+  
 $$
 \begin{align}
 A_p \in R^{n_x \cdot n_x} , B_p\in R^{n_x \cdot n_u}  \\  
@@ -36,7 +36,7 @@ $$
 x_c \in R^{n_{x_c} \cdot 1}, \quad u \in R^{n_u \cdot 1}, 
 \quad y \in R^{n_y \cdot 1},\quad r \in R^{n_r \cdot 1} \\ \\
 $$
- 
+  
 $$
 \begin{align}
 &A_c \in R^{n_{x_c}\cdot n_{x_c}}, 
@@ -51,7 +51,7 @@ The plant and controller is connected as shown in following block diagram:
 ![](/assets/2024-01-09-Frequency-Domain-Analysis-of-MIMO-System-Part-1-Model-Generalization.assets/generalized_model_block_diagram.jpeg)
 
 ## **2. Derivation of Closed-loop Dynamics:**
- 
+rewrite $u$ by replacing plant output $y$, we have 
 $$
 \begin{align}
 &&u&=C_c x_c + D_{c_1}y+ D_{c_2}r\\
@@ -119,15 +119,13 @@ $$
 Then we connect these two system with as input $u_{in}$ and as output $u_{out}$ as shown below
 
 ![](/assets/2024-01-09-Frequency-Domain-Analysis-of-MIMO-System-Part-1-Model-Generalization.assets/LG_IN.png)
-
-We can show that 
  
+We can show that 
 $$
 \begin{aligned}
 \dot{x}_c &=&& A_c x_c + B_{c_1}y \\
 &=&&A_cx_c + B_{c_1}(C_px + D_pu_{in})\\
 &=&&A_cx_c + B_{c_1}C_px + B_{c_1}D_pu_{in}\\\\
-
 u_{out} &= &&C_cx_c +D_{c_1}y \\
 &=&&C_cx_c +D_{c_1}(C_px + D_pu_{in})\\
 &=&&C_cx_c +D_{c_1}C_px + D_{c_1}D_pu_{in}
