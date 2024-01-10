@@ -23,8 +23,10 @@ $$
 
 When $A$,respectively $D$ is invertible, then one has
 $$
- \det \begin{bmatrix}A&B\\C&D\end{bmatrix}&=\det(A)\cdot\det (D-CA^{-1}B)\\
+\begin{aligned}
+\det \begin{bmatrix}A&B\\C&D\end{bmatrix}&=\det(A)\cdot\det (D-CA^{-1}B)\\
 & = \det(D)\cdot\det(A-BD^{-1}C)
+\end{aligned}
 $$
 define
 $$
@@ -32,12 +34,14 @@ M = \begin{bmatrix}sI-A &B\\-C & I+D\end{bmatrix}
 $$
 apply Schur’s determinant lemma, we have:
 $$
+\begin{aligned}
 \det(M) &= \det(sI-A)\cdot\det(I+D+C(sI-A)^{-1}B) \\
 &=\det(sI-A)\cdot\det(I+L) \\
 &=\phi_{ol}(s)\cdot\det(I+L)\\
 \\
 \det(M) &= \det(I+D)\cdot\det(sI-A+B(I+D)^{-1}C) \\
 &=\det(I+D)\cdot\phi_{cl}(s)
+\end{aligned}
 $$
 Therefore
 $$
