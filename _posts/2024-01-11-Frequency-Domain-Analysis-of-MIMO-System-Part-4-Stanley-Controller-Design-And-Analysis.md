@@ -30,8 +30,7 @@ $$
 The plant model with actuator dynamics could be express as follow
 $$
 \begin{align}
-\underbrace{\begin{bmatrix} \dot{e}_1\\\ddot{e}_1\\\dot{e}_2\\\ddot{e}_2\\ \dot{\delta} \\ \ddot{\delta}\end{bmatrix}}_{\dot{x}_p}
-&=
+\underbrace{\begin{bmatrix} \dot{e}_1\\\ddot{e}_1\\\dot{e}_2\\\ddot{e}_2\\ \dot{\delta} \\ \ddot{\delta}\end{bmatrix}}_{\dot{x}_p} &=
 \underbrace{ \begin{bmatrix}
 0 & 1 & 0 & 0 & 0 & 0 \\
 0 & -\frac{2C_{\alpha f} + 2C_{\alpha r}}{mV_x} & \frac{2C_{\alpha f} + 2C_{\alpha r}}{m}& \frac{2C_{\alpha r}(l_f + l_r)}{mV_x} & \frac{2C_{\alpha f}}{m} & 0\\
@@ -39,13 +38,11 @@ $$
 0 & -\frac{2C_{\alpha f}l_f - 2C_{\alpha r} l_r}{I_zV_x}&  \frac{2C_{\alpha f}l_f - 2C_{\alpha r}l_r}{I_z}& -\frac{2C_{\alpha r}l_r(l_f+l_r)}{I_zV_x} & \frac{2C_{\alpha f} l_f}{I_z} &0\\
 0&0&0&0&0&1\\
 0&0&0&0&-w^2_n&-2\eta w_n\end{bmatrix}}_{A_{p}}
-\underbrace{\begin{bmatrix} e_1\\\dot{e}_1\\e_2\\\dot{e}_2\\\delta\\\dot{\delta}\end{bmatrix}}_{x_p}
-+ 
+\underbrace{\begin{bmatrix} e_1\\\dot{e}_1\\e_2\\\dot{e}_2\\\delta\\\dot{\delta}\end{bmatrix}}_{x_p} + 
 \underbrace{ \begin{bmatrix}0 & 0 \\ 0 & \frac{2C_{\alpha r}(l_f+l_r)}{mV_x}-V_x\\  0 & 0 \\ 0 & -\frac{2C_{\alpha r}l_r(l_f+l_r)}{I_zV_x} \\ 0 & 0 \\ w^2_n & 0\end{bmatrix}}_{B_p}
 \underbrace{\begin{bmatrix} \delta_c\\ \dot{\psi_{des}}\end{bmatrix}}_{u}
 \\\\
-\underbrace{\begin{bmatrix} e_1\\e_2\\\dot{e}_2\end{bmatrix}}_{y} 
-&= \underbrace{ \begin{bmatrix}1&0&0&0&0&0\\0&0&1&0&0&0\\0&0&0&1&0&0\end{bmatrix}}_{C_p}
+\underbrace{\begin{bmatrix} e_1\\e_2\\\dot{e}_2\end{bmatrix}}_{y} &= \underbrace{ \begin{bmatrix}1&0&0&0&0&0\\0&0&1&0&0&0\\0&0&0&1&0&0\end{bmatrix}}_{C_p}
 \underbrace{\begin{bmatrix} e_1\\\dot{e}_1\\e_2\\\dot{e}_2\\\delta\\\dot{\delta}\end{bmatrix}}_{x_p}+\underbrace{ \begin{bmatrix}0&0\\0&0\\0&0\end{bmatrix}}_{D_p}
 \underbrace{\begin{bmatrix} \delta_c \\ \dot{\psi_{des}}\end{bmatrix}}_{u}
 \end{align}
@@ -229,7 +226,6 @@ Stability and Performance Specifications
 
 | Road Test Configuration | Vehicle Type: BYD | Road Test Data Links: [TEST_1](http://cn.xray0.autox.ds/?id=playback/byd-cn-1/20220303/2022-03-03-10-44-53) |
 | ----------------------- | ----------------- | ------------------------------------------------------------ |
-
 | Scenario                             | U-turn  | U-turn  | U-turn  | Right-turn | Right-turn | Right-turn | Left-turn | Left-turn | Left-turn | Straight | Straight | Straight |
 | ------------------------------------ | ------- | ------- | ------- | ---------- | ---------- | ---------- | --------- | --------- | --------- | -------- | -------- | -------- |
 | Specification                        | Old     | Kinetic | New     | Old        | Kinetic    | New        | Old       | Kinetic   | New       | Old      | Kinetic  | New      |
