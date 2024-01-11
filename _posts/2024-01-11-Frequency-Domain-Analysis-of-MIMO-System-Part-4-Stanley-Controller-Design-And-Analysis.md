@@ -223,9 +223,6 @@ Stability and Performance Specifications
 | ![](/assets/2024-01-11-Frequency-Domain-Analysis-of-MIMO-System-Part-4-Stanley-Controller-Design-And-Analysis.assets/simu1.jpg) |
 
 ### 3.4 Road Test Results
-
-| Road Test Configuration | Vehicle Type: BYD | Road Test Data Links: [TEST_1](http://cn.xray0.autox.ds/?id=playback/byd-cn-1/20220303/2022-03-03-10-44-53) |
-| ----------------------- | ----------------- | ------------------------------------------------------------ |
 | Scenario                             | U-turn  | U-turn  | U-turn  | Right-turn | Right-turn | Right-turn | Left-turn | Left-turn | Left-turn | Straight | Straight | Straight |
 | ------------------------------------ | ------- | ------- | ------- | ---------- | ---------- | ---------- | --------- | --------- | --------- | -------- | -------- | -------- |
 | Specification                        | Old     | Kinetic | New     | Old        | Kinetic    | New        | Old       | Kinetic   | New       | Old      | Kinetic  | New      |
