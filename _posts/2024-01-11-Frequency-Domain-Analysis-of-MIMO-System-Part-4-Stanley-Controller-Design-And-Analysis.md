@@ -197,8 +197,8 @@ Stability and Performance Specifications
 
 | **Frequency Domain Performance**   |         |
 | ---------------------------------- | ------- |
-| Max $|T|$ (dB)                     | 5.63    |
-| Max $|S|$ (dB)                     | 7.03    |
+| Max $\lVert T \rVert $ (dB)                     | 5.63    |
+| Max $\lVert S \rVert $ (dB)                     | 7.03    |
 | $\underline {\sigma} (I + L)$      | 0.41145 |
 | $\underline {\sigma} (I + L^{-1})$ | 0.46631 |
 
@@ -223,6 +223,7 @@ Stability and Performance Specifications
 | ![](/assets/2024-01-11-Frequency-Domain-Analysis-of-MIMO-System-Part-4-Stanley-Controller-Design-And-Analysis.assets/simu1.jpg) |
 
 ### 3.4 Road Test Results
+ 
 | Scenario                             | U-turn  | U-turn  | U-turn  | Right-turn | Right-turn | Right-turn | Left-turn | Left-turn | Left-turn | Straight | Straight | Straight |
 | ------------------------------------ | ------- | ------- | ------- | ---------- | ---------- | ---------- | --------- | --------- | --------- | -------- | -------- | -------- |
 | Specification                        | Old     | Kinetic | New     | Old        | Kinetic    | New        | Old       | Kinetic   | New       | Old      | Kinetic  | New      |
@@ -232,6 +233,7 @@ Stability and Performance Specifications
 | RMSE heading error (rad)             | NO_DATA | 0.0531  | 0.0128  | 0.0445     | 0.0129     | 0.0123     | 0.0392    | 0.0141    | 0.0101    | 0.0062   | 0.0044   | 0.0058   |
 | 99 PercentileMax  heading error(rad) | NO_DATA | 0.0912  | 0.034   | 0.0716     | 0.0065     | 0.0054     | -0.0058   | 0.0286    | 0.0223    | 0.0049   | -0.0006  | 0.0026   |
 | 99 PercentileMin  heading error(rad) | NO_DATA | -0.0433 | -0.0551 | -0.0012    | -0.0211    | -0.0234    | -0.0609   | -0.0099   | -0.0043   | -0.0032  | -0.0052  | -0.0022  |
+
 
 |                 Road Test Results Comparison                 |
 | :----------------------------------------------------------: |
