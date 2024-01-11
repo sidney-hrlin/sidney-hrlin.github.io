@@ -113,8 +113,10 @@ $$
 $$
 Likewise, the return difference matrix of **Multiplicative Uncertainty Model** could be expressed as:
 $$
+\begin{aligned}
 I_u + KG(I_u + \Delta_u) &= I_u + L_u(I_u + \Delta_u) = I_u + L_u + L_u\Delta_u \\
 &=L_u(L_u^{-1}+I_u+\Delta_u)
+\end{aligned}
 $$
 Assume controller $K(s)$ stabilizes the nominal plant, we have
 $$
@@ -178,7 +180,7 @@ The best gain and phase margin is achieved when $$\alpha_{\sigma} = \beta_{\sigm
 |          **Return Difference Matrix** $I+L=S^{-1}$           |     **Stability Robustness Matrix** $I+L^{-1} = T^{-1}$      |
 | :----------------------------------------------------------: | :----------------------------------------------------------: |
 |                    Inverse of Sensitivity                    |             Inverse of Complementary Sensitivity             |
-| $\min_{\omega}\underline{\sigma}(I+L_u)=\alpha_{\sigma} = \frac{1}{||S_u||_{\infty}}$ | $$ \min_{\omega}\underline{\sigma}(I+L_u^{-1})=\beta_{\sigma} = \frac{1}{||T_u||_{\infty}}$$ |
+| $$ \min_{\omega}\underline{\sigma}(I+L_u)=\alpha_{\sigma} = \frac{1}{||S_u||_{\infty}} $$ | $$ \min_{\omega}\underline{\sigma}(I+L_u^{-1})=\beta_{\sigma} = \frac{1}{||T_u||_{\infty}}$$ |
 | ![](/assets/2024-01-11-Frequency-Domain-Analysis-of-MIMO-System-Part-3-Singular-Value-Stability-Margins.assets/RD_Bode.png)  | ![](/assets/2024-01-11-Frequency-Domain-Analysis-of-MIMO-System-Part-3-Singular-Value-Stability-Margins.assets/SR_Bode.png)  |
 | Small minimum singular value indicates **poor stability robustness** | Small minimum singular value indicates **large peak resonance** |
 |   Make $S$ small at low frequencies for command following    | Make $T$ small at high frequencies for robustness to unmodeled dynamics and sensor noise |
