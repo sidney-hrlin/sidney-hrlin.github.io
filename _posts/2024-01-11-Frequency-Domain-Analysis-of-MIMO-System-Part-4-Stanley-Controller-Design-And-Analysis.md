@@ -208,7 +208,7 @@ Stability and Performance Specifications
 | Robust to Actuator              | $e^{-t_d s}\frac{w^2_n}{s^2 + 2 \eta w_n s + w^2_n} \text{ ,where } t_d = 0.1 ,\eta = 1.0, w_n = 6.0$ |
 | Robust to Extra Delay (s)       | $t_{\text{extra delay}} = 0.1s$                              |
 
-### 3.3 XSim Results
+### 3.3 Simulation Results
 
 |                   Scenario                    | U-turn | U-turn | Right-turn | Right-turn | Left-turn | Left-turn | Straight | Straight |
 | :-------------------------------------------: | :----: | :----: | :--------: | :--------: | :-------: | --------- | -------- | -------- |
