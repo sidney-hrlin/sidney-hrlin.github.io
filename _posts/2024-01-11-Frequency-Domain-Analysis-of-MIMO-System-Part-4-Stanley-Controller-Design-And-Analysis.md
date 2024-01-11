@@ -1,12 +1,10 @@
-# Frequency Domain Analysis of MIMO System: Part 4. Stanley Controller Design & Analysis
+# Frequency Domain Analysis of MIMO System: Part 4. Stanley Controller Design And Analysis
 
 ## **1. Plant Model**
-
 The front axle based error state vehicle lateral dynamic model is used to run simulation and analyze tracking performance and robustness of stanley controller. 
 $$
 \begin{align}
-\underbrace{\begin{bmatrix} \dot{e}_1\\\ddot{e}_1\\\dot{e}_2\\\ddot{e}_2\end{bmatrix}}_{\dot{x}_p}
-&=
+\underbrace{\begin{bmatrix} \dot{e}_1\\\ddot{e}_1\\\dot{e}_2\\\ddot{e}_2\end{bmatrix}}_{\dot{x}_p} &=
 \underbrace{ \begin{bmatrix}
 0 & 1 & 0 & 0 \\
 0 & -\frac{2C_{\alpha f} + 2C_{\alpha r}}{mV_x} & \frac{2C_{\alpha f} + 2C_{\alpha r}}{m}& \frac{2C_{\alpha r}(l_f + l_r)}{mV_x} \\
@@ -23,7 +21,6 @@ $$
 \underbrace{\begin{bmatrix} \delta \\ \dot{\psi_{des}}\end{bmatrix}}_{u}
 \end{align}
 $$
-
 
 next, introduce a second-order actuator for the front wheel steering angle 
 $$
@@ -56,9 +53,8 @@ $$
 \end{align}
 $$
 
-
 ## **2. Stanley Controller Model**
-
+ 
 $$
 \begin{align}\delta &= k_{openloop} \cdot arctan( \kappa L) - arctan(k_{e_1}\cdot \frac{e_1}{V_x}) - k_{e_2}\cdot e_2-k_{\dot{e}_2}\cdot \dot{e}_2\\
 & \approx k_{openloop} \cdot \kappa L - \frac{k_{e_1}}{V_x}\cdot e_1 - k_{e_2}\cdot e_2-k_{\dot{e}_2}\cdot \dot{e}_2\end{align}
